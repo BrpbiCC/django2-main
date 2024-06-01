@@ -32,7 +32,7 @@ class Ramo(models.Model):
         return str(self.ramo)    
     
 class Escuela(models.Model):
-    id_escuela = models.IntegerField(db_column='idEscuela ', primary_key=True)
+    id_escuela = models.AutoField(db_column='idEscuela ', primary_key=True)
     escuela = models.CharField (max_length=100, blank=False, null=False)
     
     def __str__(self):
