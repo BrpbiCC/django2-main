@@ -6,3 +6,8 @@ def index (request):
     alumnos= Alumno.objects.all()
     context={"alumnos": alumnos}
     return render (request, 'alumnos/index.html', context)
+
+def lista (request):
+    alumnos= Alumno.objects.raw('selecto * from alumnos_alumno')
+    context={"alumnos": alumnos}
+    return render (request, 'alumnos/lista.html', context)
